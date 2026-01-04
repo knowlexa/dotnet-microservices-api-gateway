@@ -1,0 +1,32 @@
+﻿{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/api/products",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "productservice",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/products",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "GatewayKey"
+            }
+        },
+        {
+            "DownstreamPathTemplate": "/api/orders",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "orderservice",
+                    "Port": 80
+                }
+            ],
+            "UpstreamPathTemplate": "/orders",
+            "AuthenticationOptions": {
+                "AuthenticationProviderKey": "GatewayKey"
+            }
+        }
+    ]
+}
